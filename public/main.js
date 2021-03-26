@@ -1,5 +1,5 @@
 // PARAMETERS
-const NUM = 200; // the number of vectors/circles it displays
+let NUM = 200; // the number of vectors/circles it displays
 const fr = 60 * 4; // the speed. I'm not sure of scale.
 const dt = 0.001; // 1/dt is the # of pts sampled from the array
 
@@ -19,6 +19,13 @@ function setup() {
     document.getElementsByTagName("canvas")[0].style.border = "1px solid black"; // easier to see boundaries
     frameRate(100); // for consistency
     cnvs = createGraphics(width, height); // for the path as it's drawing it out
+    SLIDER = createSlider(4, 300, NUM, 1);
+    SLIDER.input(calcNum);
+    createButton("begin drawing").mousePressed(start); // the button to start ITS drawing
+    createButton("restart").mouseReleased(restart); // the restart button
+
+    // instructions
+    createP("Instructions<br>Draw on the canvas.<br>When you're done, press ENTER or the \"begin drawing\" button.<br>Move the slider to change the number of vectors (min 4, max 300, default " + NUM + ").<br>Press the \"restart\" button to begin a new drawing.");
 }
 
 function draw() {
@@ -48,8 +55,7 @@ function draw() {
 
 function keyPressed() {
     if (keyCode == ENTER) { // pressing enter says "I'm done with my drawing"
-        STATE = true;
-        calc(path);
+        start();
     }
 }
 
@@ -146,4 +152,33 @@ function f(t) { // t from 0 to 1, this exists to make summing easier because the
 
 function e(exp) { // raises e to the i*exp power (i here is the imaginary number not an index)
     return new ComplexNumber(Math.cos(exp), Math.sin(exp));
+}
+
+function start() { // begin ITS drawing
+    prev = []; // so if someone presses enter in the middle of a drawing it doesn't connect the two
+    STATE = true;
+    calc(path);
+}
+
+function restart() {
+    // reset all variables
+    path = [];
+    vectors = [];
+    STATE = false;
+    prev = [];
+    cnvs = createGraphics(width, height);
+
+    // get rid of whatever was still on screen
+    background(255);
+}
+
+function calcNum() { // when the slider is changed the new NUM should be set
+    NUM = SLIDER.value();
+    
+    if (STATE) { // don't want to suddenly start if the user was still drawing
+        vectors = [];
+        cnvs = createGraphics(width, height); // reset traced path
+        background(255); // get rid of whatever was still on screen
+        start();
+    }
 }
