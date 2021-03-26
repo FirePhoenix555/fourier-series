@@ -1,6 +1,7 @@
 // PARAMETERS
 const NUM = 200; // the number of vectors/circles it displays
 const fr = 60 * 4; // the speed. I'm not sure of scale.
+const dt = 0.001; // 1/dt is the # of pts sampled from the array
 
 // OTHER
 let path = []; // the ComplexNumbers representing the path you draw out
@@ -117,7 +118,6 @@ class ComplexNumber {
 // ∫[0,1] f(t) * e^(-n*2*pi*i*t) * dt
 function calc() { // the math. calculates the starting angle and length for each vector
     for (let j = -NUM / 2; j <= NUM / 2; j++) {
-        let dt = 0.01;
         let sum = new ComplexNumber(0, 0); // the current sum
 
         for (let i = 0; i <= 1; i += dt) { // evaluating the integral numerically
