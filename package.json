@@ -1,0 +1,25 @@
+{
+  "name": "fourier-series",
+  "version": "1.0.0",
+  "description": "draw something and I'll turn it into rotating vectors",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FirePhoenix555/fourier-series.git"
+  },
+  "author": "fire",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FirePhoenix555/fourier-series/issues"
+  },
+  "homepage": "https://github.com/FirePhoenix555/fourier-series#readme"
+}
