@@ -117,7 +117,7 @@ class ComplexNumber {
 // ∫[0,1] f(t) * e^(-n*2*pi*i*t) * dt
 function calc() { // the math. calculates the starting angle and length for each vector
     for (let j = -NUM / 2; j <= NUM / 2; j++) {
-        let dt = 1 / NUM;
+        let dt = 0.01;
         let sum = new ComplexNumber(0, 0); // the current sum
 
         for (let i = 0; i <= 1; i += dt) { // evaluating the integral numerically
