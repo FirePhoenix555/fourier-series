@@ -10,7 +10,7 @@ This project brought me back to [a Coding Train video](https://www.youtube.com/w
 
 I was drawn back to this topic because of the beauty of the central mathematical idea in it, this one elegant integral:
 $$c_n=\int _0^1 e^{-2\pi i n t} f(t) \ dt$$
-Now, I'll explain more of what this integral is doing [in the math wiki] (or leave it up to [3blue1brown](https://www.youtube.com/watch?v=r6sGWTCMz2k&t=982s)), but let me say right here that this is beautiful. It's amazing that such a simple formula can give such a complicated idea as representing a drawn path with infinite circles. I think if anything in math represents its beauty to me, it would be this (or [Euler's formula](https://en.wikipedia.org/wiki/Euler%27s_formula)). Even [its origins](https://en.wikipedia.org/wiki/Heat_equation#Solving_the_heat_equation_using_Fourier_series) in [the heat equation](https://en.wikipedia.org/wiki/Heat_equation) show well the connections to be found everywhere in mathematics.
+Now, I'll leave the explanation of what this integral is doing to [3blue1brown](https://www.youtube.com/watch?v=r6sGWTCMz2k&t=982s), but let me say right here that this is beautiful. It's amazing that such a simple formula can give such a complicated idea as representing a drawn path with infinite circles. I think if anything in math represents its beauty to me, it would be this (or [Euler's formula](https://en.wikipedia.org/wiki/Euler%27s_formula)). Even [its origins](https://en.wikipedia.org/wiki/Heat_equation#Solving_the_heat_equation_using_Fourier_series) in [the heat equation](https://en.wikipedia.org/wiki/Heat_equation) show well the connections to be found everywhere in mathematics.
 
 
 ## Function
